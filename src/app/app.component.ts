@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FrontAngularLoginJWT';
+  
+  public loginValid = true;
+  public username = '';
+  public password = '';
+  
+  
 }
