@@ -8,8 +8,10 @@
               <div class="mb-md-5 mt-md-4 pb-5">
   
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                <p class="text-white-50 mb-5">Por favor, ingresar usuario y clave</p>
-  
+                <p *ngIf="!this.isLogginFail" class="text-white-50 mb-5">login component Por favor, ingresar usuario y clave</p>
+                <p *ngIf="this.isLogginFail" class="text-warning mb-5" >Nombre de usuario incorrecto, intente nuevamente.</p>
+                
+                
                 <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
   
                   <div class="form-outline form-white mb-4">
@@ -26,8 +28,8 @@
   
                   <!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p> -->
   
-                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-  
+                  <button *ngIf="!this.isLogged"class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                  <button *ngIf="this.isLogged" class="btn btn-danger btn-lg px-5" (click)="logout()">Logout</button>
                 </form>
   
               </div>

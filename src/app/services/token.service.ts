@@ -11,7 +11,10 @@ const AUTHORITIES_KEY = 'Authorities';
 export class TokenService {
 
   roles: Array<string> =[];
+  
   constructor() { }
+  
+  
   public setToken(token:string):void{
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY,token)
